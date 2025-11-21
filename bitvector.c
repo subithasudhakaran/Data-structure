@@ -23,6 +23,29 @@ void	bitVector(char	ary[26],char	bit[26],int	num)
 		}
 	}
 }	
+void	setUnion(char	bit[26],char	bit2[26])
+{
+	for(int	i=0;i<26;i++)
+	{
+		result[i]=bit1[i]&bit2[26];
+	}
+	
+}
+void	setComplement(char	bit[2])
+{
+	for(int	i=0;i<26;i++)
+	{
+		if(bit[i]==0)
+			result[i]=1;
+		else
+			result[i]=0;
+	}
+}	
+void	setDifference(char	bit1[26],char	bit2[26])
+{
+	setComplement(bit2);
+	setIntersection(bit1,result);
+}
 int	main()
 {
 	int	num1,num2;
@@ -41,4 +64,26 @@ int	main()
 			scanf("%c",set2[i]);
 	}
 }
+{
+	do
+	{
+		int	item,choice;
+		printf("\n1.Setunion\n2.SetComplememnt\n3.SetDefferent\n4.Exit\n");
+		printf("Enter	your	choice:	");
+		scanf("%d",&choice);
+		switch(choice)
+		{
+			case	1:
+							scanf("%d",&item);
+							push(item);
+							break;
+			case	2:pop();
+							break;
+			case	3:display();
+							break;
+			case	4:return(0);
+			default:printf("Enter	the	correct	choice.");
+							break;														
+		}
+	}while(1);
 
